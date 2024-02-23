@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Détails du fournisseur</h1>
+    {# <p>Id: {{ fournisseurs.id }}</p> #}
+    <p> Code fournisseur: {{ fournisseurs.Codefournisseur }}</p>
+    <p> Raison sociale: {{ fournisseurs.Raisonsociale }}</p>
+    <p> Rue : {{ fournisseurs.Ruefournisseur }}</p>
+    <p> Code postal: {{ fournisseurs.CodePostal }}</p>
+    <p> Localite: {{ fournisseurs.Localite }}</p>
+    <p> Pays: {{ fournisseurs.Pays }}</p>
+    <p>	Tel : {{ fournisseurs.Telfournisseur }}</p>
+    <p> Url : {{ fournisseurs.Urlfournisseur }}</p>
+    <p> Email : {{ fournisseurs.Emailfournisseur }}</p>
+    <p> Fax : {{ fournisseurs.Faxfournisseur }}</p>
+    <a href="{{ path('app_fournisseurs') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}

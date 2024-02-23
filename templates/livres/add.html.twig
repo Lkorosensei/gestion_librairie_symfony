@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ form_start(form) }}
+{{ form_label(form.ISBN) }}
+{{ form_widget(form.ISBN) }}
+{{ form_label(form.Titre_livre) }}
+{{ form_widget(form.Titre_livre) }}
+{{ form_label(form.Theme_livre) }}
+{{ form_widget(form.Theme_livre) }}
+{{ form_label(form.Nbr_pages_livre) }}
+{{ form_widget(form.Nbr_pages_livre) }}
+{{ form_label(form.Format_livre) }}
+{{ form_widget(form.Format_livre) }}
+{{ form_label(form.Nom_auteur) }}
+{{ form_widget(form.Nom_auteur) }}
+{{ form_label(form.Prenom_auteur) }}
+{{ form_widget(form.Prenom_auteur) }}
+{{ form_label(form.Editeur) }}
+{{ form_widget(form.Editeur) }}
+{{ form_label(form.Annee_edition) }}
+{{ form_widget(form.Annee_edition) }}
+{{ form_label(form.Prix_vente) }}
+{{ form_widget(form.Prix_vente) }}
+{{ form_label(form.Langue_livre) }}
+{{ form_widget(form.Langue_livre) }}
+{{ form_rest(form) }}
+<input type="submit" value="Enregistrer">
+{{ form_end(form) }}
+  <a href="{{ path('app_livres') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}

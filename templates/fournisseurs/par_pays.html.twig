@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Fournisseurs - Par Pays {% endblock %}
+{% block body %}
+{# {{ dump(livres) }} #}
+<h1> Fournisseurs par Pays: </h1>
+    <select name"fournisseurs_par_pays">
+        <option value="">Sélectionner un Pays : </option>
+        {% for fournisseur in fournisseurs %}
+        <option value="{{ fournisseur.Pays }}"> {{ fournisseur.Pays }} </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Rechercher">
+<a href="{{ path('app_fournisseurs') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}

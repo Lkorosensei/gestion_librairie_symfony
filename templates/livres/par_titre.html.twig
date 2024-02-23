@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Livres - Par Titre {% endblock %}
+{% block body %}
+{# {{ dump(livres) }} #}
+<h1> Livre par Titre: </h1>
+    <form action="{{ path('app_livres_show') }}" method="post">
+        <select name="livre_par_titre">
+            <option value="">Sélectionner un Titre : </option>
+            {% for livre in livres %}
+            <option value="{{ livre.getId() }}"> {{ livre.getTitrelivre() }} </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Rechercher">
+    </form>
+<a href="{{ path('app_livres') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}

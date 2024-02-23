@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
         {% block stylesheets %}
         {% endblock %}
 
@@ -12,6 +15,47 @@
         {% endblock %}
     </head>
     <body>
+      <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: #9AC8EB;">
+      <div class="container-fluid">
+        <a href="{{ path('app_home') }}" class="navbar-brand">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a href="{{ path('app_livres') }}" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Livres</a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ path('app_livres') }}" class="dropdown-item">Toutes les livres</a></li>
+                <li><a href="{{ path('app_livres_par_titre') }}" class="dropdown-item">Par Titre</a></li>
+                <li><a href="{{ path('app_livres_par_auteur') }}" class="dropdown-item">Par Auteur</a></li>
+                <li><a href="{{ path('app_livres_par_editeur') }}" class="dropdown-item">Par Editeur</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="{{ path('app_fournisseurs') }}" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Fournisseurs</a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ path('app_fournisseurs') }}" class="dropdown-item">Tout les fournisseurs</a></li>
+                <li><a href="{{ path('app_fournisseurs_par_raison_sociale') }}" class="dropdown-item">Par Raison Sociale</a></li>
+                <li><a href="{{ path('app_fournisseurs_par_localite') }}" class="dropdown-item">Par Localite</a></li>
+                <li><a href="{{ path('app_fournisseurs_par_pays') }}" class="dropdown-item">Par Pays</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="{{ path('app_commandes') }}" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Commandes</a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ path('app_commandes') }}" class="dropdown-item">Toutes les commandes</a></li>
+                <li><a href="{{ path('app_commandes_par_editeur') }}" class="dropdown-item">Par Editeur</a></li>
+                <li><a href="{{ path('app_commandes_par_fournisseur') }}" class="dropdown-item">Par Fournisseurs</a></li>
+                <li><a href="{{ path('app_commandes_par_date') }}" class="dropdown-item">Par Date</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
         {% block body %}{% endblock %}
     </body>
 </html>

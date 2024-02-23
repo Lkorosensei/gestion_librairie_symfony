@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ form_start(form) }}
+{{ form_label(form.Code_fournisseur) }}
+{{ form_widget(form.Code_fournisseur) }}
+{{ form_label(form.Raison_sociale) }}
+{{ form_widget(form.Raison_sociale) }}
+{{ form_label(form.Rue_fournisseur) }}
+{{ form_widget(form.Rue_fournisseur) }}
+{{ form_label(form.Code_postal) }}
+{{ form_widget(form.Code_postal) }}
+{{ form_label(form.Localite) }}
+{{ form_widget(form.Localite) }}
+{{ form_label(form.Pays) }}
+{{ form_widget(form.Pays) }}
+{{ form_label(form.Tel_fournisseur) }}
+{{ form_widget(form.Tel_fournisseur) }}
+{{ form_label(form.Url_fournisseur) }}
+{{ form_widget(form.Url_fournisseur) }}
+{{ form_label(form.Email_fournisseur) }}
+{{ form_widget(form.Email_fournisseur) }}
+{{ form_label(form.Fax_fournisseur) }}
+{{ form_widget(form.Fax_fournisseur) }}
+{{ form_rest(form) }}
+<input type="submit" value="Enregistrer">
+{{ form_end(form) }}
+  <a href="{{ path('app_fournisseurs') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}

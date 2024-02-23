@@ -3,3 +3,18 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+app_livres_add:
+    path: /livres/add
+    controller: App\Controller\LivresController::add
+    methods: ['GET', 'POST']
+
+app_fournisseurs_add:
+    path: /fournisseurs/add
+    controller: App\Controller\FournisseursController::add
+    methods: ['GET', 'POST']
+
+app_commandes_add:
+    path: /commandes/add
+    controller: App\Controller\CommandesController::add
+    methods: ['GET', 'POST']

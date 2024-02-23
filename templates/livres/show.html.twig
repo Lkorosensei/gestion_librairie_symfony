@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Détails du livre</h1>
+    <p>Id: {{ livre.id }}</p>
+    <p>ISBN: {{ livre.ISBN }}</p>
+    <p>Titre: {{ livre.titreLivre }}</p>
+    <p>Thème: {{ livre.themeLivre }}</p>
+    <p>Nombre de pages: {{ livre.nbrPagesLivre }}</p>
+    <p>Format: {{ livre.formatLivre }}</p>
+    <p>Nom de l'auteur: {{ livre.nomAuteur }}</p>
+    <p>Prénom de l'auteur: {{ livre.prenomAuteur }}</p>
+    <p>Editeur: {{ livre.editeur }}</p>
+    <p>Année d'édition: {{ livre.anneeEdition }}</p>
+    <p>Prix de vente: {{ livre.prixVente }}</p>
+    <p>Langue du livre: {{ livre.langueLivre }}</p>
+    <a href="{{ path('app_livres') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}

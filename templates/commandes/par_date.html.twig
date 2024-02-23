@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Commandes - Par Date {% endblock %}
+{% block body %}
+<h1> Commandes par Date: </h1>
+    <select name="commandes_par_date">
+        <option value="">Sélectionner une Date : </option>
+        {% for commande in commandes %}
+        <option value="{{ commande.Date_achat|date('Y-m-d') }}"> {{ commande.Date_achat|date('Y-m-d') }} </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Rechercher">
+<a href="{{ path('app_commandes') }}"> <button> Retour à la liste </button> </a> 
+{# {{ dump(commandes) }} #}
+{% endblock %}

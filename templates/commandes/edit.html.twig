@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ form_start(form) }}
+{{ form_rest(form) }}
+<input type="submit" value="Enregistrer">
+{{ form_end(form) }}
+  <a href="{{ path('app_commandes') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}

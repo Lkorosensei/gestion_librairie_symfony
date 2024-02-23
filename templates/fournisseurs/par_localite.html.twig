@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Fournisseurs - Par Localite {% endblock %}
+{% block body %}
+{# {{ dump(livres) }} #}
+<h1> Fournisseurs par Localite: </h1>
+    <select name"fournisseurs_par_localite">
+        <option value="">Sélectionner un Localite : </option>
+        {% for fournisseur in fournisseurs %}
+        <option value="{{ fournisseur.getLocalite() }}"> {{ fournisseur.getLocalite() }} </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Rechercher">
+<a href="{{ path('app_fournisseurs') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}

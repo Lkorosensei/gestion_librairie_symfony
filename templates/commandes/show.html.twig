@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Affichage {% endblock %}
+
+{% block body %}
+    <h1> Détails des commandes</h1>
+    <p> id_commande: {{ commandes.id }}  </p>
+    <p> Titre Livre: {{ commandes.IdLivre.TitreLivre }} </p>
+    <p> Raison Sociale: {{ commandes.Idfournisseur.RaisonSociale }} </p>
+    <p> Date d'achat: {{ commandes.DateAchat|date('d/m/Y') }} </p>
+    <p> Prix d'achat: {{ commandes.PrixAchat }} </p>
+    <p> Nombres d'exemplaires: {{ commandes.NbrExemplaires }} </p>
+    <a href="{{ path('app_commandes') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}

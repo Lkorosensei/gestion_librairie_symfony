@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Livres - Par Editeur {% endblock %}
+{% block body %}
+{# {{ dump(livres) }} #}
+<h1> Livre par Editeur: </h1>
+    <select name"livre_par_editeur">
+        <option value="">Sélectionner un Editeur : </option>
+        {% for livre in livres %}
+        <option value="{{ livre.getEditeur() }}"> {{ livre.getEditeur() }} </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Rechercher">
+<a href="{{ path('app_livres') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}

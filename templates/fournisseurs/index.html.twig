@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des fournisseurs{% endblock %}
+{% block body %}
+<h1> Liste des fournisseurs </h1>
+<table id="customers" border=1 width=75%>
+<a href ="{{ path('app_fournisseurs_add') }}"><button type="button" class="btn btn-primary">Ajouter un fournisseur</button></a>
+
+<tr>
+    <TH> Id_fournisseur </TH> 
+    <TH> Code_fournisseur  </TH>
+    <TH> Raison_sociale  </TH> 
+    <TH> Rue_fournisseur </TH>
+    <TH> Code_postal </TH> 
+    <TH> Localite </TH>
+    <TH> Pays </TH> 
+    <TH> Tel_fournisseur </TH> 
+    <TH> Url_fournisseur </TH> 
+    <TH> Email_fournisseur </TH> 
+    <TH> Fax_fournisseur </TH>
+    <TH> Afficher </TH>
+    <TH> Modifier </TH>
+    <TH> Supprimer </TH>
+</tr>
+{% for fournisseur in fournisseurs %}
+<tr>
+<td> {{fournisseur.getId() }} </td> 
+<td> {{fournisseur.getCodeFournisseur()}} </td>
+<td> {{fournisseur.getRaisonSociale()}} </td>
+<td> {{fournisseur.getRueFournisseur()}} </td>
+<td> {{fournisseur.getCodePostal()}} </td>
+<td> {{fournisseur.getLocalite()}} </td>
+<td> {{fournisseur.getPays()}} </td>
+<td> {{fournisseur.getTelFournisseur()}} </td>
+<td> {{fournisseur.getUrlFournisseur()}} </td>
+<td> {{fournisseur.getEmailFournisseur()}} </td>
+<td> {{fournisseur.getFaxFournisseur()}} </td>
+<td> <a href="{{ path('app_fournisseurs_show', {'id': fournisseur.id}) }}" class="btn btn-primary text-warning" > show </a> </td> 
+<td> <a href="{{ path('app_fournisseurs_edit', {'id': fournisseur.id}) }}" class="btn btn-warning"> edit </a> </td>  
+<td> <a href="{{ path('app_fournisseurs_delete', {'id': fournisseur.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer cette utilisateur ?')"  class="btn btn-danger">delete</a> </td>   
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Livres{% endblock %}
+{% block body %}
+<h1> Liste des Livres </h1>
+<table id="customers" border=1 width=75%>
+<a href ="{{ path('app_livres_add') }}"><button type="button" class="btn btn-primary">Ajouter un livre</button></a>
+<tr>
+    <TH> Id_Livre </TH> 
+    <TH> ISBN </TH>
+    <TH> Titre_livre </TH> 
+    <TH> Theme_livre </TH>
+    <TH> Nbr_pages_livre </TH> 
+    <TH> Format_livre </TH>
+    <TH> Nom_auteur </TH>
+    <TH> Prenom_auteur </TH>
+    <TH> Editeur </TH>
+    <TH> Annee_edition </TH>
+    <TH> Prix_vente </TH>
+    <TH> Langue_livre </TH>
+    <TH> Afficher </TH>
+    <TH> Modifier </TH>
+    <TH> Supprimer </TH>
+</tr>
+{% for livre in livres %}
+<tr>
+<td> {{livre.getId() }} </td> 
+<td> {{livre.getISBN()}} </td>
+<td> {{livre.getTitrelivre()}} </td>
+<td> {{livre.getThemelivre()}} </td>
+<td> {{livre.getNbrpageslivre()}} </td>
+<td> {{livre.getFormatLivre()}} </td>
+<td> {{livre.getNomAuteur()}} </td>
+<td> {{livre.getPrenomAuteur()}} </td>
+<td> {{livre.getEditeur()}} </td>
+<td> {{livre.getAnneeEdition()}} </td>
+<td> {{livre.getPrixVente()}} </td>
+<td> {{livre.getLangueLivre()}} </td>
+<td> <a href=" {{ path('app_livres_show', {'id': livre.id}) }}" class="btn btn-primary text-warning" > show </a> </td>
+<td> <a href=" {{ path('app_livres_edit', {'id': livre.id}) }}" class="btn btn-warning"> edit </a> </td> 
+<td> <a href="{{ path('app_livres_delete', {'id': livre.id}) }}" onclick="return confirm('Etes vous sur de vouloir supprimer cette utilisateur ?')"  class="btn btn-danger"> delete </a> </td>  
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

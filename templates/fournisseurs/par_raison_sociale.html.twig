@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Fournisseurs - Par Raison Sociale {% endblock %}
+{% block body %}
+{# {{ dump(livres) }} #}
+<h1> Fournisseurs par Raison Sociale: </h1>
+    <select name"fournisseurs_par_raison_sociale">
+        <option value="">Sélectionner un Fournisseur : </option>
+        {% for fournisseur in fournisseurs %}
+        <option value="{{ fournisseur.getRaisonSociale() }}"> {{ fournisseur.getRaisonSociale() }} </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Rechercher">
+<a href="{{ path('app_fournisseurs') }}"> <button> Retour à la liste </button> </a> 
+{% endblock %}
